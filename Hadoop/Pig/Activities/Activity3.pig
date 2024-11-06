@@ -5,6 +5,6 @@ GroupByCountry = GROUP salesTable BY Country;
 -- Generate result format
 CountByCountry = FOREACH GroupByCountry GENERATE CONCAT((chararray)$0, CONCAT(':', (chararray)COUNT($1)));
 --Delete the output folder
-rmf hdfs:///user/spandana/salesOutput;
+rmf hdfs:///user/002E2P744/salesOutput;
 -- Save result in HDFS folder
-STORE CountByCountry INTO 'hdfs:///user/Kishan/salesOutput' USING PigStorage('\t');
+STORE CountByCountry INTO 'hdfs:///user/002E2P744/salesOutput' USING PigStorage('\t');
